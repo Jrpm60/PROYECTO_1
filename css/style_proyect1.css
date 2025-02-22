@@ -7,10 +7,17 @@ body {
 }
 
 header {
+    border left: 10px;
+    border right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #7689c7;
     color: #161616;
     text-align: center;
     padding: 1em 0;
+    border-radius: 5px;
+
 }
 
 nav ul {
