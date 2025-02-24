@@ -6,19 +6,34 @@ body {
     text-align: center;
 }
 
+
+
 header {
     border left: 10px;
     border right: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: #7689c7;
     color: #161616;
     text-align: center;
-    padding: 1em 0;
     border-radius: 5px;
 
 }
+
+
+#magoal {
+    height: 70px;
+    width: 100px;
+    margin-left: 15px;
+}
+
+#coinImage {
+    width: 100px;
+    height: 70px;
+}
+
+
 
 nav ul {
     background-color: aquamarine;
@@ -26,18 +41,20 @@ nav ul {
     margin: 0;
     padding: 0;
     text-align: right;
+
 }
 
 nav ul li {
     display: inline;
     background-color: grey;
+
 }
 
 nav ul li a {
-    text-decoration: none;
+    text-decoration: underline;
     color: #333;
-    padding: 1em 2em;
-    background-color: #f4f4f4;
+    background-color: aquamarine;
+
 }
 
 nav ul li a:hover {
@@ -68,3 +85,38 @@ button:hover {
     background-color: #f4f4f4;
     color: #333;
 }   
+
+form div {
+    display: center; /* Usamos flexbox para alinear los elementos en fila */
+    align-items: center; /* Centramos verticalmente los elementos */
+    margin-bottom: 10px;
+}
+
+label {
+    width: 50px; /* Ancho fijo para las etiquetas (ajusta según sea necesario) */
+    text-align: right; /* Alineamos el texto de la etiqueta a la derecha */
+    margin-right: 10px; /* Espacio entre la etiqueta y la entrada */
+}
+
+input, select {
+    flex-grow: 0; /* Permite que las entradas se expandan para llenar el espacio restante */
+}
+
+button{
+    margin-left: 160px;
+}
+
+footer {
+    border left: 10px;
+    border right: 10px;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #7689c7;
+    color: #161616;
+    text-align: center;
+    border-radius: 5px;
+}

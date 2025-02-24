@@ -4,65 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
-
     <link rel="stylesheet" href="/css/style_proyect1.css">
-
 </head>
 <body>
-
     <header>
-        <h1>Formulario de solicitud de empleo</h1>
+        <img id="magoal" src="Magoal_logo.PNG" alt="Magoal 66" height="70" width="100" margin-left:15px >
+        <h1>La gestion integral del transporte del siglo XXI</h1>
+        <img id="coin" src="coin.PNG" width="100" height="70" alt="Coin">
     </header>
-
     <nav>
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="form.html">Formulario</a></li>
-            <li><a href="contact.html">Contacto</a></li>
-        </ul>   
+            <li><a href="index.html">Inicio    .</a></li>
+            <li><a href="form.html">Trabaja con nosotros</a></li>
+            <li><a href="contact.html">Contacto    .</a></li>
+        </ul>
     </nav>
-
     <section>
-
-        <form action=""></form>
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" required="1"><br><p></p>
-
-        <label for="apellido1">1 er Apellido:</label>
-        <input type="text" id="apellido1" name="apellido1" required><br><p></p>
-
-        <label for="apellido2">2º Apellido:</label>
-        <input type="text" id="apellido2" name="apellido2" required><br><p></p>
-
-        <label for="dni">DNI:</label>
-        <input type="text" id="dni" name="dni" required><br><p></p>
-
-        <label for="edu">Formacion:</label>
-        <select name="edu" id="edu">
-            <option value="1">Sin estudios</option>
-            <option value="2">Educacion Primaria</option>
-            <option value="3">Educacion Secundaria</option>
-            <option value="4">Formacion Profesional</option>
-            <option value="5">Grado Universitario</option>
-            <option value="6">Master</option>
-            <option value="7">Doctorado</option>
-        </select>
-
+        <form action="/procesar" method="post">
+            <div>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="apellido1">1er Apellido:</label>
+                <input type="text" id="apellido1" name="apellido1" required>
+            </div>
+            <div>
+                <label for="apellido2">2º Apellido:</label>
+                <input type="text" id="apellido2" name="apellido2" required>
+            </div>
+            <div>
+                <label for="email">@_Mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" name="dni" required>
+            </div>
+            <div>
+                <label for="edu">Formación:</label>
+                <select name="edu" id="edu">
+                    <option value="1">Sin estudios</option>
+                    <option value="2">Educación Primaria</option>
+                    <option value="3">Educación Secundaria</option>
+                    <option value="4">Formación Profesional</option>
+                    <option value="5">Grado Universitario</option>
+                    <option value="6">Máster</option>
+                    <option value="7">Doctorado</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
     </section>
-
-    <section id="section2">
-    
-        <label for="">Enviar datos:</label>
-        <input type="submit" value="💸">
-
-    </section>
-
+    <footer>
+        <p>© 2025 Magoal 66</p>
+        <p>info@magoal66.eus</p>
+        <p>eTr2 by COIN</p>
     </footer>
-
-        
-    
-   
-    
-    
 </body>
 </html>
