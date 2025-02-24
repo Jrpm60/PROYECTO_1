@@ -14,3 +14,5 @@ Uso de JavaScript para manejar el formulario y la interacción con el servidor.
 Diseño utilizando Flexbox para una mejor organización visual de los elementos.
 Implementación de un servidor Node.js para procesar y mostrar los datos del formulario.
 Uso de GitHub para la entrega del proyecto y el control de versiones.
+
+Ejecucion del archivo servidor serverCHE.js

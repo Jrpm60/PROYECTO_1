@@ -4,8 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
-    <link rel="stylesheet" href="/css/style_proyect1.css">
+    <link rel="stylesheet" href="/proyecto_1/css/style_proyect1.css">
 </head>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header, nav {
+    width: 100%;
+  }
+
+header {
+    border-left: 10px;
+    top: 0;
+    border-right: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #7689c7;
+    color: #161616;
+    text-align: center;
+    border-radius: 5px;
+}
+
+nav {
+    top: 80px;
+    background-color: aquamarine;
+    padding: 5px 0;
+    border-radius: 5px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    text-align: right;
+
+}
+
+nav ul li {
+    display: inline;
+    background-color: grey;
+
+}
+
+nav ul li a {
+    
+    text-decoration: underline;
+    color: #333;
+    background-color: aquamarine;
+
+}
+
+nav ul li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+#magoal {
+    height: 70px;
+    width: 100px;
+    margin-left: 15px;
+}
+
+#coinImage {
+    width: 100px;
+    height: 70px;
+}
+
+
+
+section {
+    text-align: center;
+    margin: 2em;
+}
+
+select {
+    padding: 1em;
+    margin: 1em;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 2em;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #f4f4f4;
+    color: #333;
+}   
+form{
+    top: 130;
+}
+form div {
+    display: center; 
+    align-items: center; 
+    margin-bottom: 10px;
+}
+
+label {
+    width: 50px; 
+    text-align: right; 
+    margin-right: 10px; 
+}
+
+input, select {
+    flex-grow: 0; 
+}
+
+button{
+    margin-left: 160px;
+}
+
+footer {
+    border-left: 10px;
+    border-right: 10px;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #7689c7;
+    color: #161616;
+    text-align: center;
+    border-radius: 5px;
+}
+section {
+    top: 130px;
+}
+.section-container {
+        display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 10px; /* Space between items */
+    padding: 10px; /* Padding around the gallery */
+}
+
+.gallery-item {
+    padding: 5px; /* Padding inside each item */
+    overflow: hidden; /* Prevents overflow of images */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.gallery-item img {
+    width: 70%; /* Makes images responsive */
+    height: 70%; /* Makes images fill the height of the div */
+    object-fit: cover; /* Ensures the image covers the entire div */
+    align-self: center;
+    transition: transform 0.3s; /* Smooth zoom effect */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.item-columspan {
+    grid-column: span 2; /* Span 2 rows */
+}
+</style>
 <body>
     <header>
         <img id="magoal" src="Magoal_logo.PNG" alt="Magoal 66" height="70" width="100" margin-left:15px >
@@ -13,12 +178,14 @@
         <img id="coin" src="coin.PNG" width="100" height="70" alt="Coin">
     </header>
     <nav>
-        <ul>
-            <li><a href="index.html">Inicio    .</a></li>
-            <li><a href="form.html">Trabaja con nosotros</a></li>
-            <li><a href="contact.html">Contacto    .</a></li>
-        </ul>
-    </nav>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio    .</a></li>
+                <li><a href="/procesar">Trabaja con Nosotros</a></li>
+                <li><a href="/contact">Contacto</a></li>
+                <li><a href="/gracias"></a></li>
+            </ul>   
+        </nav>
     <section>
         <form action="/procesar" method="post">
             <div>
@@ -53,15 +220,25 @@
                     <option value="7">Doctorado</option>
                 </select>
             </div>
+
+
             <div>
-                <button type="submit">Enviar</button>
+                <button onclick="location.href='/gracias'" type="submit">Enviar</button>
             </div>
+
         </form>
     </section>
+
+
+
+
+
+
     <footer>
         <p>© 2025 Magoal 66</p>
         <p>info@magoal66.eus</p>
         <p>eTr2 by COIN</p>
     </footer>
+    
 </body>
 </html>
