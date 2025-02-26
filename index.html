@@ -19,11 +19,14 @@
 }
 
 header, nav {
-    width: 100%;
+    width:100%; /* Makes images responsive */
+    height:auto; /* Makes images fill the height of the div */
+
   }
 
 header {
     border-left: 10px;
+    position: fixed;
     top: 0;
     border-right: 10px;
     display: flex;
@@ -36,6 +39,7 @@ header {
 }
 
 nav {
+    position: fixed;
     top: 80px;
     background-color: aquamarine;
     padding: 5px 0;
@@ -77,7 +81,6 @@ nav ul li a:hover {
     width: 100px;
     height: 70px;
 }
-
 
 
 section {
@@ -141,16 +144,18 @@ footer {
     border-radius: 5px;
 }
 section {
-    top: 130px;
+    position:relative;
+    top: 180px;
 }
 .section-container {
-        display: grid;
+    display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     gap: 10px; /* Space between items */
     padding: 10px; /* Padding around the gallery */
 }
 
 .gallery-item {
+
     padding: 5px; /* Padding inside each item */
     overflow: hidden; /* Prevents overflow of images */
     border-radius: 8px; /* Rounded corners */
@@ -158,8 +163,8 @@ section {
 }
 
 .gallery-item img {
-    width: 70%; /* Makes images responsive */
-    height: 70%; /* Makes images fill the height of the div */
+    width: 60%; /* Makes images responsive */
+    height: 60%; /* Makes images fill the height of the div */
     object-fit: cover; /* Ensures the image covers the entire div */
     align-self: center;
     transition: transform 0.3s; /* Smooth zoom effect */
@@ -191,41 +196,92 @@ section {
         </ul>   
     </nav>
 
-    <section class="section-container">
-
-        <div class="gallery-item item-columspan" ><img src="https://picsum.photos/200/200?random=60" alt="Image 1"></div>
-        <div class="gallery-item">
-            <h2>¡Bienvenido!</h2>
-        Conocenos, y ven a formar parte de un equipo
-        multidisciplinar, con gran foco en la tecnologia,
-        en la innovacion, apasionados por los retos.
-        Si te gusta trabajar en equipo, y buscas un lugar
-        donde puedas crecer profesionalmente, ¡este es tu sitio!    
-        </div>
-
-        <div class="gallery-item">
-            <h2>Gestion operaciones de transporte</h2>
-            La gestión de operaciones consiste en sistematizar la
-            dirección y el control de un proceso empresarial en la
-            transformación de los recursos, que se denominan insumos, en
-            bienes o servicios acabados para los consumidores o clientes. 
-        </div>
-
-        <div class="gallery-item item-columspan"><img src="https://picsum.photos/200/200?random=9" alt="Image 1"></div>
-
-        <div class="gallery-item item-columspan"><img src="https://picsum.photos/200/200?random=6" alt="Image 8"></div>
-        <div class="gallery-item">
-            <h2>Conectado con el mundo</h2>
-        Multiples opciones de integracion, con aplicaciones
-        externas, Googlemaps, Trimbel, Whatssapp, Correo
-           
-        </div>
-        
-
-    </section>
+<section class="section-container">
 
 
-    <button onclick="location.href='form.html'" type="button">Comenzar</button>
+<!-- INICIO PRIMER BLOQUE. IMAGEN. IMPAR COLAPS IZQ 2 DE 3 COLUMNAS................ -->
+
+<div class="gallery-item item-columspan" >
+    <img src="https://picsum.photos/200/200?random=60" alt="Image 1">
+</div>
+
+<div class="gallery-item">
+    <h2>¡Bienvenido!</h2>
+Conocenos, y ven a formar parte de un equipo
+multidisciplinar, con gran foco en la tecnologia,
+en la innovacion, apasionados por los retos.
+Si te gusta trabajar en equipo, y buscas un lugar
+donde puedas crecer profesionalmente, ¡este es tu sitio!    
+</div>
+<!-- FIN PRIMER BLOQUE ......................................... -->
+
+
+<!-- INICIO CUARTO BLOQUE. VIDEO. PAR COLAPS DERECHA 2 DE 3 COLUMNAS.. -->
+            <div class="gallery-item">
+                <h2>Gestion operaciones de transporte</h2>
+                La gestión de operaciones consiste en sistematizar la
+                dirección y el control de un proceso empresarial en la
+                transformación de los recursos, que se denominan insumos, en
+                bienes o servicios acabados para los consumidores o clientes. 
+            </div>
+
+            <div class="gallery-item item-columspan">
+                <video width="800" height="400" controls>
+                <source src="https://media.istockphoto.com/id/1413207061/es/v%C3%ADdeo/tr%C3%A1fico-por-carretera-en-delhi-roads.mp4?s=mp4-640x640-is&k=20&c=A1-lCxgn52e92K43RQ49ZOQCHg5skyzFCZd05ctsBIg=">
+                Tu navegador no soporta los vídeos de HTML5
+                </video>
+            </div>
+<!-- FIN CUARTO BLOQUE. ................................. -->
+
+<!-- INICIO QUINTO BLOQUE. IMPAR. SONIDO. COLAPS IZQUIERDA 2 DE 3 COLUMNAS.. -->
+
+<div class="gallery-item item-columspan">
+    <!-- <img src="https://picsum.photos/200/300/?blur" alt="reproductor"> -->
+    <audio controls>
+        <source src="https://essentials.pixfort.com/original/wp-content/uploads/sites/4/2020/02/skanews.wav" >
+    </audio>
+</div>
+
+<div class="gallery-item">
+    <h2>Conectado con el mundo</h2>
+    Multiples opciones de integracion, con aplicaciones
+    externas, Googlemaps, Trimbel, Whatssapp, Correo
+</div>
+<!-- FIN QUINTO BLOQUE ......................................... -->
+
+
+
+<!-- INICIO SEGUNDO BLOQUE. PAR . IMAGEN. COLAPS DERECHA 2 DE 3 COLUMNAS.. -->
+    <div class="gallery-item">
+        <h2>Gestion operaciones de transporte</h2>
+        La gestión de operaciones consiste en sistematizar la
+        dirección y el control de un proceso empresarial en la
+        transformación de los recursos, que se denominan insumos, en
+        bienes o servicios acabados para los consumidores o clientes. 
+    </div>
+
+    <div class="gallery-item item-columspan">
+        <img src="https://picsum.photos/200/200?random=9" alt="Image 1">
+    </div>
+<!-- FIN SEGUNDO BLOQUE ......................................... -->
+
+<!-- INICIO TERCER BLOQUE. IMPAR. IMAGEN. COLAPS IZQUIERDA 2 DE 3 COLUMNAS.. -->
+
+<div class="gallery-item item-columspan">
+    <img src="https://picsum.photos/200/200?random=6" alt="Image 8">
+</div>
+
+<div class="gallery-item">
+    <h2>Conectado con el mundo</h2>
+    Multiples opciones de integracion, con aplicaciones
+    externas, Googlemaps, Trimbel, Whatssapp, Correo
+</div>
+<!-- FIN TERCER BLOQUE ......................................... -->
+
+</section>
+
+
+    <!-- <button onclick="location.href='form.html'" type="button">Comenzar</button> -->
 
     <footer>
         <p>© 2025 Magoal 66</p>

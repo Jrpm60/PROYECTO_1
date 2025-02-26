@@ -17,11 +17,14 @@
 }
 
 header, nav {
-    width: 100%;
+    width:100%; /* Makes images responsive */
+    height:auto; /* Makes images fill the height of the div */
+
   }
 
 header {
     border-left: 10px;
+    position: fixed;
     top: 0;
     border-right: 10px;
     display: flex;
@@ -34,6 +37,7 @@ header {
 }
 
 nav {
+    position: fixed;
     top: 80px;
     background-color: aquamarine;
     padding: 5px 0;
@@ -75,7 +79,6 @@ nav ul li a:hover {
     width: 100px;
     height: 70px;
 }
-
 
 
 section {
@@ -139,16 +142,18 @@ footer {
     border-radius: 5px;
 }
 section {
-    top: 130px;
+    position:relative;
+    top: 180px;
 }
 .section-container {
-        display: grid;
+    display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     gap: 10px; /* Space between items */
     padding: 10px; /* Padding around the gallery */
 }
 
 .gallery-item {
+
     padding: 5px; /* Padding inside each item */
     overflow: hidden; /* Prevents overflow of images */
     border-radius: 8px; /* Rounded corners */
@@ -156,8 +161,8 @@ section {
 }
 
 .gallery-item img {
-    width: 70%; /* Makes images responsive */
-    height: 70%; /* Makes images fill the height of the div */
+    width: 60%; /* Makes images responsive */
+    height: 60%; /* Makes images fill the height of the div */
     object-fit: cover; /* Ensures the image covers the entire div */
     align-self: center;
     transition: transform 0.3s; /* Smooth zoom effect */
@@ -177,15 +182,16 @@ section {
         <h1>La gestion integral del transporte del siglo XXI</h1>
         <img id="coin" src="coin.PNG" width="100" height="70" alt="Coin">
     </header>
+    
     <nav>
-        <nav>
-            <ul>
-                <li><a href="/">Inicio    .</a></li>
-                <li><a href="/procesar">Trabaja con Nosotros</a></li>
-                <li><a href="/contact">Contacto</a></li>
-                <li><a href="/gracias"></a></li>
-            </ul>   
-        </nav>
+        <ul>
+            <li><a href="/">Inicio    .</a></li>
+            <li><a href="/procesar">Trabaja con Nosotros</a></li>
+            <li><a href="/contact">Contacto</a></li>
+            <li><a href="/gracias"></a></li>
+        </ul>   
+    </nav>
+    
     <section>
         <form action="/procesar" method="post">
             <div>
