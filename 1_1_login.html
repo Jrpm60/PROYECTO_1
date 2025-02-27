@@ -19,6 +19,7 @@
 header, nav {
     width:100%; /* Makes images responsive */
     height:auto; /* Makes images fill the height of the div */
+    z-index: 100;
 
   }
 
@@ -173,72 +174,116 @@ section {
 }
 
 .item-columspan {
-    grid-column: span 2; /* Span 2 rows */
+    grid-column: span 2; /* Span 2 col */
 }
+
+.item-columspan3 {
+    grid-column: span 3; /* Span 3 col */
+}
+
+/* Estilos para el área de arrastrar y soltar */
+#drop-area {
+    border: 2px dashed #ccc; /* Borde punteado gris claro */
+    padding: 20px; /* Espacio interno */
+    text-align: center; /* Texto centrado */
+    cursor: pointer; /* Cursor de puntero */
+    width: 300px; /* Ancho fijo para el contenedor, adaptable */
+    margin: 20px auto; /* Centrar el contenedor horizontalmente */
+    box-sizing: border-box; /* Incluir el borde y el padding en el ancho total */
+}
+
+    /* Ratón sobre el área de subida */
+#drop-area.hover {
+    border-color: #007bff; 
+}
+
+        
+#file-info {
+    margin-top: 10px; 
+    display:none; /* no se muestra hasta que no hay archivo */
+    text-align: center; 
+}
+
+#upload-button {
+    background-color: #007bff; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; 
+    margin-top: 10px; 
+}
+
+body {
+    font-family: sans-serif; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start; 
+    min-height: 100vh; 
+    margin: 0; 
+}
+
+  
+h1 {
+    text-align: center;
+}
+
 </style>
+
 <body>
     <header>
-        <img id="magoal" src="Magoal_logo.PNG" alt="Magoal 66" height="70" width="100" margin-left:15px >
+        <img id="magoal" src="https://raw.githubusercontent.com/Jrpm60/images/refs/heads/main/Magoal_logo.PNG" alt="Magoal 66" height="70" width="100" margin-left:15px>
         <h1>La gestion integral del transporte del siglo XXI</h1>
-        <img id="coin" src="coin.PNG" width="100" height="70" alt="Coin">
+        <img id="eTr2" src="https://github.com/Jrpm60/images/blob/main/coin.PNG?raw=true" width="100" height="70" alt="Coin">
     </header>
-    
+
     <nav>
         <ul>
-            <li><a href="/">Inicio    .</a></li>
-            <li><a href="/procesar">Trabaja con Nosotros</a></li>
-            <li><a href="/contact">Contacto</a></li>
-            <li><a href="/gracias"></a></li>
+            <li><a href="/">🏚️</a></li>
+            <li><a href="/login"> 🛅 </a></li>
+            <li><a href="">.            .</a></li>
         </ul>   
     </nav>
-    
-    <section>
-        <form action="/procesar" method="post">
-            <div>
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div>
-                <label for="apellido1">1er Apellido:</label>
-                <input type="text" id="apellido1" name="apellido1" required>
-            </div>
-            <div>
-                <label for="apellido2">2º Apellido:</label>
-                <input type="text" id="apellido2" name="apellido2" required>
-            </div>
-            <div>
-                <label for="email">@_Mail:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="dni">DNI:</label>
-                <input type="text" id="dni" name="dni" required>
-            </div>
-            <div>
-                <label for="edu">Formación:</label>
-                <select name="edu" id="edu">
-                    <option value="1">Sin estudios</option>
-                    <option value="2">Educación Primaria</option>
-                    <option value="3">Educación Secundaria</option>
-                    <option value="4">Formación Profesional</option>
-                    <option value="5">Grado Universitario</option>
-                    <option value="6">Máster</option>
-                    <option value="7">Doctorado</option>
-                </select>
-            </div>
+
+   
+</body>
+
+<section class="section-container">
+
+    <div class="gallery-item item-columspan3" >
+        <h1>Acceso Entorno de Privado</h1>
+    </div>
+
+    <div class="gallery-item item-columspan" >
+        <img src="https://raw.githubusercontent.com/Jrpm60/images/refs/heads/main/Conectado.PNG" alt="Image 1">
+    </div>
+
+    <!-- Mostar en la caja   FIN-->
 
 
+<form action="/procesar" method="post">
+
+    <div class="gallery-item">
             <div>
-                <button onclick="location.href='/gracias'" type="submit">Enviar</button>
+                <label for="usuario">Nombre USUARIO:</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+            <div>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <a href="">Olvidaste tu Usuario y/o Contraseña</a>
             </div>
 
-        </form>
+            <div>
+                <button id=upload-button onclick="location.href='/'" type="submit">Enviar</button>
+            </div>
+    </div>
+</form>
+
+
     </section>
-
-
-
-
-
 
     <footer>
         <p>© 2025 Magoal 66</p>
@@ -246,5 +291,5 @@ section {
         <p>eTr2 by COIN</p>
     </footer>
     
-</body>
+
 </html>

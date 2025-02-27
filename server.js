@@ -8,16 +8,19 @@ const server = createServer((req, res) => {
     var url = req.url;
     var fileName = "";
     if (url === "/") {
-        fileName = "index.html";
+        fileName = "1_0_index.html";
     }
     else if (url === "/procesar") {
-        fileName = "form.html";
+        fileName = "1_1_form.html";
     }
     else if (url === "/contact")
-        fileName = "contact.html";
+        fileName = "1_2_contact.html";
     
     else if (url === "/gracias") {
-        fileName = "thanks.html";
+        fileName = "1_5_thanks.html";
+    }
+    else if (url === "/login") {
+        fileName = "1_1_login.html";
     }
 
     

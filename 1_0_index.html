@@ -21,6 +21,7 @@
 header, nav {
     width:100%; /* Makes images responsive */
     height:auto; /* Makes images fill the height of the div */
+    z-index: 100;
 
   }
 
@@ -149,49 +150,51 @@ section {
 }
 .section-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    gap: 10px; /* Space between items */
-    padding: 10px; /* Padding around the gallery */
+    grid-template-columns: repeat(3, 1fr); /* 3 Columnas Iguales */
+    gap: 10px; /* Espacio entre elementos */
+    padding: 10px; /* Padding alrededor de la galeria */
 }
 
 .gallery-item {
 
-    padding: 5px; /* Padding inside each item */
-    overflow: hidden; /* Prevents overflow of images */
-    border-radius: 8px; /* Rounded corners */
+    padding: 5px; /* Padding dentro cada caja */
+    overflow: hidden; /* Prevee el overflow */
+    border-radius: 8px; /* Redondear esquinas */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 .gallery-item img {
-    width: 60%; /* Makes images responsive */
-    height: 60%; /* Makes images fill the height of the div */
-    object-fit: cover; /* Ensures the image covers the entire div */
+    width: 60%; /* Responsive */
+    height: 60%; /* Ocupar la altura */
+    object-fit: cover; /* Cubrir*/
     align-self: center;
-    transition: transform 0.3s; /* Smooth zoom effect */
+    transition: transform 0.3s; /* Efecto zoom */
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05); /* Slight zoom effect on hover */
+    transform: scale(1.05); /* Hace zoom al hacer foco */
 }
 
 .item-columspan {
-    grid-column: span 2; /* Span 2 rows */
+    grid-column: span 2; /* Une dos columnas */
 }
 </style>
 <body>
 
     <header>
-        <img id="magoal" src="/PROYECTO_1/Magoal_logo.PNG" alt="Magoal 66" height="70" width="100" margin-left:15px>
+        <img id="magoal" src="https://raw.githubusercontent.com/Jrpm60/images/refs/heads/main/Magoal_logo.PNG" alt="Magoal 66" height="70" width="100" margin-left:15px>
         <h1>La gestion integral del transporte del siglo XXI</h1>
-        <img id="eTr2" src="coin.PNG" width="100" height="70" alt="Coin">
+        <img id="eTr2" src="https://github.com/Jrpm60/images/blob/main/coin.PNG?raw=true" width="100" height="70" alt="Coin">
     </header>
 
     <nav>
         <ul>
-            <li><a href="/">Inicio    .</a></li>
+            <li><a href="/">🏚️</a></li>
+            <li><a href="/login"> 🛅 </a></li>
             <li><a href="/procesar">Trabaja con Nosotros</a></li>
             <li><a href="/contact">Contacto</a></li>
             <li><a href="/gracias"></a></li>
+
 
         </ul>   
     </nav>
@@ -202,7 +205,7 @@ section {
 <!-- INICIO PRIMER BLOQUE. IMAGEN. IMPAR COLAPS IZQ 2 DE 3 COLUMNAS................ -->
 
 <div class="gallery-item item-columspan" >
-    <img src="https://picsum.photos/200/200?random=60" alt="Image 1">
+    <img src="https://raw.githubusercontent.com/Jrpm60/images/refs/heads/main/Conectado.PNG" alt="Image 1">
 </div>
 
 <div class="gallery-item">
