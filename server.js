@@ -1,10 +1,9 @@
-import { createServer } from 'node:http';
-import fs from 'node:fs';
-import querystring from 'node:querystring';
+const http = require('http');
+const fs = require('fs');
+const { parse } = require('querystring');
 
-
-const server = createServer((req, res) => {
-    
+const server = http.createServer((req, res) => {
+// NAVEGACION  inicio ----------------------------------
     var url = req.url;
     var fileName = "";
     if (url === "/") {
@@ -15,15 +14,15 @@ const server = createServer((req, res) => {
     }
     else if (url === "/contact")
         fileName = "1_2_contact.html";
-    
+
     else if (url === "/gracias") {
         fileName = "1_5_thanks.html";
     }
     else if (url === "/login") {
         fileName = "1_1_login.html";
     }
+// NAVEGACION  fin ----------------------------------
 
-    
     if (req.method === 'GET') {
         fs.readFile(fileName, (err, data) => {
             if (err) {
@@ -32,29 +31,50 @@ const server = createServer((req, res) => {
                 res.end('Not Found');
             } else {
                 res.statusCode = 200;
-                res.setHeader('Content-Type', 'text/html');
+                let contentType = 'text/html';
+                if (fileName.endsWith('.css')) {
+                    contentType = 'text/css';
+                } else if (fileName.endsWith('.js')) {
+                    contentType = 'text/javascript';
+                }
+                res.setHeader('Content-Type', contentType);
                 res.end(data);
             }
         });
     }
-    else if (req.method === 'POST' && req.url === '/register') {
+
+    if (req.method === 'POST') {
         let body = '';
-
         req.on('data', chunk => {
-            body += chunk.toString(); // Collect chunks
+            body += chunk.toString();
         });
-
         req.on('end', () => {
-            // Format 'username=john_doe&password=secure123'
-            console.log('Full request body:', body); // Now we have the full data
-            // TO DO: coger los datos del querystring
+            const formData = parse(body);
+            let filePath;
 
+            if (req.url === '/contact') {
+                filePath = 'contact_form_data.txt';
+            } else if (req.url === '/procesar') {
+                filePath = 'job_application_data.txt';
+            } else if (req.url === '/procesLogin') {
+                filePath = 'login_data.txt';
+            } else {
+                res.writeHead(404, { 'Content-Type': 'text/plain' });
+                res.end('Not Found');
+                return;
+            }
 
-            res.writeHead(302, { 'Location': '/gracias' });  // redirect
-            res.end('Data received!');
+            const dataString = Object.values(formData).join(', ') + '\n';
+            fs.appendFile(filePath, dataString, err => {
+                if (err) {
+                    res.writeHead(500, { 'Content-Type': 'text/plain' });
+                    res.end('Error al guardar los datos');
+                } else {
+                    res.writeHead(302, { 'Location': '/gracias' });
+                    res.end();
+                }
+            });
         });
-    } else {
-        res.end('Send a POST request to /login');
     }
 });
 
