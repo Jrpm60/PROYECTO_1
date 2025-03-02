@@ -9,224 +9,213 @@
 
     <style>
         body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding-top: 100px;
+            padding-bottom: 80px;
+            text-align: center;
+            color: #333333;
+            box-sizing: border-box;
+        }
     
-    header, nav {
-        width:100%; /* Makes images responsive */
-        height:auto; /* Makes images fill the height of the div */
-        z-index: 100;
+        /* Estilos del Header */
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            z-index: 100;
+        }
     
-      }
+        #magoal, #coinImage {
+            height: 70px;
+            width: auto;
+            border-radius: 5px;
+        }
     
-    header {
-        border-left: 10px;
-        position: fixed;
-        top: 0;
-        border-right: 10px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background-color: #7689c7;
-        color: #161616;
-        text-align: center;
-        border-radius: 5px;
-    }
+        /* Estilos del Nav */
+        nav {
+            position: fixed;
+            top: 80px;
+            background-color: #e0e0e0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 100;
+        }
     
-    nav {
-        position: fixed;
-        top: 80px;
-        background-color: aquamarine;
-        padding: 5px 0;
-        border-radius: 5px;
-    }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style-type: none;
+            margin: 0;
+            padding: 10px 0;
+            text-align: center;
+        }
     
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        text-align: right;
+        nav ul li {
+            margin: 5px;
+        }
     
-    }
+        nav ul li a {
+            text-decoration: none;
+            color: #333333;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
     
-    nav ul li {
-        display: inline;
-        background-color: grey;
+        nav ul li a:hover {
+            background-color: #2ecc71;
+            color: #ffffff;
+        }
     
-    }
+        /* Estilos de la Sección Principal */
+        .section-container {
+            margin: 120px auto 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            position: relative;
+            z-index: 1;
+        }
     
-    nav ul li a {
-        
-        text-decoration: underline;
-        color: #333;
-        background-color: aquamarine;
+        .gallery-item {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
     
-    }
+        .gallery-item img {
+            max-width: 100%;
+            max-height: 250px;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
     
-    nav ul li a:hover {
-        background-color: #333;
-        color: #fff;
-    }
-    #magoal {
-        height: 70px;
-        width: 100px;
-        margin-left: 15px;
-    }
+        .gallery-item video {
+            max-width: 100%;
+            max-height: 300px;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
     
-    #coinImage {
-        width: 100px;
-        height: 70px;
-    }
+        .gallery-item audio {
+            width: 100%;
+            margin-bottom: 10px;
+        }
     
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
     
-    section {
-        text-align: center;
-        margin: 2em;
-    }
+        .item-columspan {
+            grid-column: 1 / -1;
+        }
     
-    select {
-        padding: 1em;
-        margin: 1em;
-    }
+        .item-columspan3 {
+            grid-column: 1 / -1;
+        }
     
-    button {
-        background-color: #007bff; 
-        color: white; 
-        padding: 10px 20px; 
-        border: none; 
-        cursor: pointer; 
-        margin-top: 10px; 
-    }
+        /* Estilos del Footer */
+        footer {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            z-index: 100;
+        }
     
-    button:hover {
-        background-color: #f4f4f4;
-        color: #333;
-    }   
-    form{
-        top: 130;
-    }
-    form div {
-        display: center; 
-        align-items: center; 
-        margin-bottom: 10px;
-    }
+        /* Botones */
+        button {
+            background-color: #e74c3c;
+            color: #ffffff;
+            padding: 1em 2em;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            margin-left: 160px;
+            border-radius: 5px;
+        }
     
-    label {
-        width: 50px; 
-        text-align: right; 
-        margin-right: 10px; 
-    }
+        button:hover {
+            background-color: #c0392b;
+        }
     
-    input, select {
-        flex-grow: 0; 
-    }
+        /* Estilos del Formulario */
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 20px auto;
+        }
     
-    button{
-        margin-left: 160px;
-    }
+        form div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
     
-    footer {
-        border-left: 10px;
-        border-right: 10px;
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        justify-content: space-around;
-        align-items: center;
-        background-color: #7689c7;
-        color: #161616;
-        text-align: center;
-        border-radius: 5px;
-    }
-    section {
-        position:relative;
-        top: 180px;
-    }
-    .section-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-        gap: 10px; /* Space between items */
-        padding: 10px; /* Padding around the gallery */
-    }
+        label {
+            width: 120px;
+            text-align: right;
+            margin-right: 10px;
+        }
     
-    .gallery-item {
-        padding: 5px; /* Padding inside each item */
-        overflow: hidden; /* Prevents overflow of images */
-        border-radius: 8px; /* Rounded corners */
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    }
+        input,
+        select,
+        textarea {
+            flex-grow: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
     
-    .gallery-item img {
-        width: 60%; /* Makes images responsive */
-        height: 60%; /* Makes images fill the height of the div */
-        object-fit: cover; /* Ensures the image covers the entire div */
-        align-self: center;
-        transition: transform 0.3s; /* Smooth zoom effect */
-    }
+        button[type="submit"] {
+            align-self: center;
+        }
     
-    .gallery-item:hover img {
-        transform: scale(1.05); /* Slight zoom effect on hover */
-    }
+        .drop-area {
+            border: 2px dashed #422d2d; 
+            padding: 20px; 
+            text-align: center;
+        }
     
-    .item-columspan {
-        grid-column: span 2; /* Span 2 col */
-    }
+        /* Diseño Responsivo */
+        @media (min-width: 768px) {
+            .item-columspan {
+                grid-column: span 2;
+            }
+        }
     
-    .item-columspan3 {
-        grid-column: span 3; /* Span 3 col */
-    }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
     
-    /* Estilos para el área de arrastrar y soltar */
-    #drop-area {
-        border: 2px dashed #ccc; /* Borde punteado gris claro */
-        padding: 20px; /* Espacio interno */
-        text-align: center; /* Texto centrado */
-        cursor: pointer; /* Cursor de puntero */
-        width: 300px; /* Ancho fijo para el contenedor, adaptable */
-        margin: 20px auto; /* Centrar el contenedor horizontalmente */
-        box-sizing: border-box; /* Incluir el borde y el padding en el ancho total */
-    }
-    
-        /* Ratón sobre el área de subida */
-    #drop-area.hover {
-        border-color: #007bff; 
-    }
-    
-            
-    #file-info {
-        margin-top: 10px; 
-        display:none; /* no se muestra hasta que no hay archivo */
-        text-align: center; 
-    }
-    
-    #upload-button {
-        background-color: #007bff; 
-        color: white; 
-        padding: 10px 20px; 
-        border: none; 
-        cursor: pointer; 
-        margin-top: 10px; 
-    }
-    
-    body {
-        font-family: sans-serif; 
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-        justify-content: flex-start; 
-        min-height: 100vh; 
-        margin: 0; 
-    }
-    
-      
-    h1 {
-        text-align: center;
-    }
-    
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
     </style>
 </head>
 <body>

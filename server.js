@@ -20,7 +20,11 @@ const server = http.createServer((req, res) => {
     }
     else if (url === "/login") {
         fileName = "1_1_login.html";
+
+    else if (url === "/inicio") {
+        fileName = "2_0_inicio.html";
     }
+    
 // NAVEGACION  fin ----------------------------------
 
     if (req.method === 'GET') {
@@ -53,11 +57,11 @@ const server = http.createServer((req, res) => {
             let filePath;
 
             if (req.url === '/contact') {
-                filePath = 'contact_form_data.txt';
+                filePath = 'data_contact_form.txt';
             } else if (req.url === '/procesar') {
-                filePath = 'job_application_data.txt';
+                filePath = 'data_job_application.txt';
             } else if (req.url === '/procesLogin') {
-                filePath = 'login_data.txt';
+                filePath = 'data_login.txt';
             } else {
                 res.writeHead(404, { 'Content-Type': 'text/plain' });
                 res.end('Not Found');
