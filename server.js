@@ -20,10 +20,12 @@ const server = http.createServer((req, res) => {
     }
     else if (url === "/login") {
         fileName = "1_1_login.html";
+    }
 
     else if (url === "/inicio") {
         fileName = "2_0_inicio.html";
     }
+    
     
 // NAVEGACION  fin ----------------------------------
 
