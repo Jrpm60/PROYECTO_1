@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
 
-    <!-- <link rel="stylesheet" href="/proyecto_1/css/style_proyect1.css"> -->
+    <!-- <link rel="stylesheet" href="/proyecto_1/css/style_proyect1.css"> Enlace para css externo-->
 
 </head>
 
@@ -14,14 +14,13 @@
         font-family: Arial, sans-serif;
         background-color: #f0f0f0;
         margin: 0;
-        padding-top: 100px;
-        padding-bottom: 80px;
+        padding-top: 25px;
+        padding-bottom: 50px;
         text-align: center;
         color: #333333;
         box-sizing: border-box;
     }
 
-    /* Estilos del Header */
     header {
         width: 100%;
         position: fixed;
@@ -33,7 +32,7 @@
         color: #ffffff;
         padding: 10px 20px;
         box-sizing: border-box;
-        z-index: 100;
+        z-index: 100; /* MAntiene el Hrader "por encima" */
     }
 
     #magoal, #coinImage {
@@ -42,14 +41,13 @@
         border-radius: 5px;
     }
 
-    /* Estilos del Nav */
     nav {
         position: fixed;
         top: 80px;
         background-color: #e0e0e0;
         width: 100%;
         box-sizing: border-box;
-        z-index: 100;
+        z-index: 100; /* MAntiene el Hrader "por encima" */
     }
 
     nav ul {
@@ -78,7 +76,7 @@
         color: #ffffff;
     }
 
-    /* Estilos de la Sección Principal */
+
     .section-container {
         margin: 120px auto 20px;
         display: grid;
@@ -131,7 +129,7 @@
         grid-column: 1 / -1;
     }
 
-    /* Estilos del Footer */
+
     footer {
         width: 100%;
         position: fixed;
@@ -146,7 +144,7 @@
         z-index: 100;
     }
 
-    /* Botones */
+
     button {
         background-color: #e74c3c;
         color: #ffffff;
@@ -158,11 +156,14 @@
         border-radius: 5px;
     }
 
+    /*button[type="submit"] {
+        align-self: center;
+    }*/
+
     button:hover {
         background-color: #c0392b;
     }
 
-    /* Estilos del Formulario */
     form {
         display: flex;
         flex-direction: column;
@@ -176,7 +177,7 @@
         margin-bottom: 10px;
     }
 
-    label {
+    label {       /* alinea las cajas del formulario */
         width: 120px;
         text-align: right;
         margin-right: 10px;
@@ -187,16 +188,13 @@
     textarea {
         flex-grow: 1;
         padding: 5px;
-        border: 1px solid #ccc;
+        border: 1px solid #532c86;
         border-radius: 4px;
-    }
-
-    button[type="submit"] {
-        align-self: center;
     }
 
     .drop-area {
         border: 2px dashed #422d2d; 
+        background-color: #2ecc71;
         padding: 20px; 
         text-align: center;
     }
@@ -233,13 +231,13 @@
         }
 </style>
 
+<!-- INICIO CABECERA Y BARRA DE NAVEGACION-->
 <body>
     <header>
         <img id="magoal" src="https://raw.githubusercontent.com/Jrpm60/images/refs/heads/main/Magoal_logo.PNG" alt="Magoal 66" height="70" width="100" margin-left:15px>
         <h1>La gestion integral del transporte del siglo XXI</h1>
         <img id="eTr2" src="https://github.com/Jrpm60/images/blob/main/coin.PNG?raw=true" width="100" height="70" alt="Coin">
     </header>
-
     <nav>
         <ul>
             <li><a href="/">🏚️</a></li>
@@ -247,52 +245,32 @@
             <li><a href="/procesar">Trabaja con Nosotros</a></li>
             <li><a href="/contact">Contacto</a></li>
             <li><a href="/gracias"></a></li>
-
-
         </ul>   
     </nav>
-
-   
 </body>
+<!-- FIN CABECERA Y BARRA DE NAVEGACION-->
 
-
-
+<!-- INICIO BLOQUES FILAS Y COLUMNAS-->
 <section class="section-container">
 
-<!-- INICIO PRIMER BLOQUE. IMAGEN. IMPAR COLAPS IZQ 2 DE 3 COLUMNAS................ -->
-
-<div class="gallery-item item-columspan3" >
-
-    <h1>Inscripcion de Candidatura para Empleo</h2>
-   
-</div>
-<!-- FIN PRIMER BLOQUE ......................................... -->
-
-
-    <!-- primera INICIO caja IZQ upload............ -->       
-
-<div class="gallery-item">
-
-    <!-- Mostar en la caja   Inicio-->
-
-    <h1>Cargar un archivo</h1>
-    <h5>powered by Gemini AI</h5>
-    
-
-    <div id="drop-area">
-        <p>Arrastra y suelta un archivo aquí, <br> o haz clic para seleccionar</p>
-        <input type="file" id="fileElem" style="display:none">
+    <!-- INICIO PRIMER FILA. COLAPS 3 COL EN 1 . SOLO TEXTO.-->
+    <div class="gallery-item item-columspan3" >
+        <h1>Inscripcion de Candidatura para Empleo</h2>   
     </div>
+    <!-- FIN PRIMERA FILA ................. -->
 
-    <div id="file-info">
-        <p>Archivo seleccionado: <span id="file-name"></span></p>
-        <button id="upload-button"></button>Subir archivo</button>
-    </div>
-
-        <!-- Mostar en la caja   FIN-->
-
-        <!-- Funcionalidad de subir Archivos Inicio (Arrastrar y soltar o seleccionar)-->
-            
+    <!-- SEGUNDA FILA. INICIO PRIMERA COLUMNA. CARGA DE ARCHIVOS -->   
+    <div class="gallery-item">
+        <h1>Cargar un archivo</h1>
+        <h5>powered by Gemini AI</h5>
+        <div id="drop-area">
+            <p>Arrastra y suelta un archivo aquí, <br> o haz clic para seleccionar</p>
+            <input type="file" id="fileElem" >
+        </div>
+        <div id="file-info">
+            <p>Archivo seleccionado: <span id="file-name"></span></p>
+            <button id="upload-button">Subir archivo</button>
+        </div>
         <script>
             // Variables
             let dropArea = document.getElementById('drop-area');
@@ -375,7 +353,7 @@
                 let formData = new FormData();
                 formData.append('archivo', file);
         
-                fetch('/pendiente de implementar', { // Reemplaza '/upload' con la URL de tu servidor
+                fetch('/UPLOAD', { // Reemplaza '/upload' con la URL de tu servidor
                     method: 'POST',
                     body: formData
                 })
@@ -398,23 +376,24 @@
                 }
             });
         </script>
+    </div>
+    <!-- SEGUNDA FILA. FIN PRIMERA COLUMNA. CARGA DE ARCHIVOS --> 
 
-</div>
-
-<!-- primera caja FIN IZQ upload............ -->
-
-<div class="gallery-item">
-    <h2>¡Estamos deseando conocerte!</h2>
-Envianos tus datos, sube tu curriculum,
-queremos conocerte, siempre estamos 
-a la busqueda de talento y sumar al equipo.
-
-Recuerda que tu ACTITUD siempre suma.
-</div>
-
-<form action="/procesar" method="post">
-
+    <!-- SEGUNDA FILA. INICIO SEGUNDA COLUMNA. TEXTO --> 
     <div class="gallery-item">
+        <h2>¡Estamos deseando conocerte!</h2>
+        <P>Envianos tus datos, sube tu curriculum,
+        queremos conocerte, siempre estamos 
+        a la busqueda de talento y sumar al equipo.
+        <BR></BR>
+        Recuerda que tu ACTITUD siempre suma.</P>
+    </div>
+    <!-- SEGUNDA FILA. FIN SEGUNDA COLUMNA. TEXTO -->
+
+
+    <!-- SEGUNDA FILA. INICIO TERCERA COLUMNA. FORMULARIO --> 
+    <form action="/procesar" method="post">
+        <div class="gallery-item">
             <div>
                 <label for="name">Nombre:</label>
                 <input type="text" id="name" name="name" required>
@@ -447,14 +426,22 @@ Recuerda que tu ACTITUD siempre suma.
                     <option value="7">Doctorado</option>
                 </select>
             </div>
+
+
+            <div id="polipriv">
+                <input type="checkbox" id="politicaPrivacidad">
+                <h5><a target="_blank" href="00politica_privacidad.txt">Política de Privacidad</a></h5>
+            </div>
+
             <div id="robotCheck">
                 <input type="checkbox" onchange="manejarCheckbox.call(this)">
                 <img width="150px" id="robot" src="https://raw.githubusercontent.com/Jrpm60/images/refs/heads/main/Robot.PNG" alt="Image 8">
             </div>
+
             <progress id="barraProgreso" value="0" max="100"></progress>
+
             <p id="cargando">Cargando... <span id="valorProgreso">0</span>%</p>
-        
-        
+                
             <script>
                 function actualizarProgreso(valor) {
                     document.getElementById("barraProgreso").value = valor;
@@ -494,17 +481,16 @@ Recuerda que tu ACTITUD siempre suma.
 
             <div>
                 <button type="submit">Enviar</button>
-
             </div>
-    </div>
-</form>
+        </div>
+    </form>
+    <!-- SEGUNDA FILA. FIN TERCERA COLUMNA. FORMULARIO --> 
 
-
-    </section>
+</section>
+<!-- FIN BLOQUES FILAS Y COLUMNAS-->
 
     <footer>
         <p>© 2025 Magoal 66</p>
     </footer>
     
-
 </html>

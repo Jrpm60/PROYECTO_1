@@ -21,7 +21,6 @@ const server = http.createServer((req, res) => {
     else if (url === "/login") {
         fileName = "1_1_login.html";
     }
-
     else if (url === "/inicio") {
         fileName = "2_0_inicio.html";
     }
@@ -60,23 +59,35 @@ const server = http.createServer((req, res) => {
 
             if (req.url === '/contact') {
                 filePath = 'data_contact_form.txt';
+                redirectUrl = '/gracias';
             } else if (req.url === '/procesar') {
                 filePath = 'data_job_application.txt';
+                redirectUrl = '/gracias';
             } else if (req.url === '/procesLogin') {
                 filePath = 'data_login.txt';
+                const { usuario, password } = formData;
+                //console.log(usuario);
+                //console.log(password);
+
+                    if (usuario==='pp' && password==='11') {
+                        redirectUrl="/inicio"; }  
+                    else {redirectUrl='/';}
+                    
             } else {
                 res.writeHead(404, { 'Content-Type': 'text/plain' });
                 res.end('Not Found');
                 return;
             }
 
-            const dataString = Object.values(formData).join(', ') + '\n';
+            const now = new Date();
+            const dateTimeString =now.toLocaleString();
+            const dataString = `${dateTimeString}, ${Object.values(formData).join(', ')}\n`;
             fs.appendFile(filePath, dataString, err => {
                 if (err) {
                     res.writeHead(500, { 'Content-Type': 'text/plain' });
                     res.end('Error al guardar los datos');
                 } else {
-                    res.writeHead(302, { 'Location': '/gracias' });
+                    res.writeHead(302, { 'Location': redirectUrl });
                     res.end();
                 }
             });
